@@ -72,6 +72,16 @@ cd lenme
    ```bash
    docker compose up --build
    ```
+   
+## Running Tests
+
+To ensure the functionality of the application, run the tests using the following command:
+
+```bash
+docker compose run --rm app sh -c "python manage.py test"
+```
+This command will execute the Django test suite inside the Docker container, allowing you to verify that all components of the application are working as expected.
+
 
 ### API Documentation
 
