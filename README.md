@@ -41,6 +41,44 @@ The wallet system manages the balance for both lenders and borrowers. It include
 - Updating balances in response to payments and transfers.
 - Ensuring sufficient funds before processing loan offers and payments.
 
+## Database Schema
+
+The following diagram illustrates the database schema for the Lenme project:
+
+<img alt="Database Schema" src="images/db_schema.png"/>
+
+This image shows the relationships and structure of the database tables used in the application.
+
+
+## Caching
+
+To improve performance and reduce database load, caching has been implemented for loan requests using Redis.
+
+### Caching Implementation
+
+- **Purpose**: Cache loan requests to minimize repetitive database queries and enhance response times.
+- **Cache Storage**: Redis
+
+### Benefits
+
+- **Performance**: Significant reduction in response times for fetching loan requests.
+- **Reduced Database Load**: Less frequent queries to the database, leading to decreased load and improved scalability.
+
+### Example Configuration
+
+Here's a basic example of how Redis caching is configured:
+
+```python
+# settings.py
+
+# Redis cache settings
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://redis:6379",
+    }
+}
+```
 ## Requirements
 
 - Docker
@@ -94,12 +132,12 @@ Lenme provides interactive API documentation using Swagger. You can use this doc
    ```markdown
    localhost:8000/api/v1/swagger/
    ```
-   
 
-## Database Schema
+## Conclusion
 
-The following diagram illustrates the database schema for the Lenme project:
+This project implements a robust system for managing loan requests, enhanced with caching for improved performance. By utilizing Redis for caching, we significantly reduce database load and response times, ensuring a smoother and more efficient user experience.
 
-<img alt="Database Schema" src="images/db_schema.png"/>
+Thank you for reviewing this documentation. We hope you find the system efficient and effective. If you have any questions or suggestions, feel free to reach out!
 
-This image shows the relationships and structure of the database tables used in the application.
+
+
