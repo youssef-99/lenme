@@ -193,7 +193,7 @@ CACHES = {
 CELERY_BEAT_SCHEDULE = {
     "update_due_payments": {
         "task": "apps.payments.tasks.update_due_payments",
-        "schedule": crontab(minute="*/1"),
+        "schedule": crontab(hour="*/1"),
     },
 }
 
