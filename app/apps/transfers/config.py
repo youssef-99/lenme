@@ -1,0 +1,25 @@
+# Transfer status choices
+TRANSFER_STATUS_PENDING = 'pending'
+TRANSFER_STATUS_COMPLETED = 'completed'
+TRANSFER_STATUS_FAILED = 'failed'
+
+TRANSFER_STATUS_CHOICES = [
+    (TRANSFER_STATUS_PENDING, 'Pending'),
+    (TRANSFER_STATUS_COMPLETED, 'Completed'),
+    (TRANSFER_STATUS_FAILED, 'Failed'),
+]
+
+# Transfer type choices
+TRANSFER_TYPE_ADD_MONEY = 'add_money'
+TRANSFER_TYPE_WITHDRAWAL = 'withdrawal'
+TRANSFER_TYPE_FUND_LOAN = 'fund_loan'
+TRANSFER_TYPE_MONTHLY_PAYMENT = 'monthly_payment'
+TRANSFER_TYPE_COLLECTION = 'collection'
+
+TRANSFER_TYPE_CHOICES = [
+    (TRANSFER_TYPE_ADD_MONEY, 'Add Money'),
+    (TRANSFER_TYPE_WITHDRAWAL, 'Withdrawal'),
+    (TRANSFER_TYPE_FUND_LOAN, 'Fund Loan'),
+    (TRANSFER_TYPE_MONTHLY_PAYMENT, 'Monthly Payment'),
+    (TRANSFER_TYPE_COLLECTION, 'Collection'),
+]
